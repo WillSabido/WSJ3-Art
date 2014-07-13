@@ -55,6 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* =============== 2.0 - DEFAULT HTML - LINK STYLES =============== */
 a {
+	color:#9BD7F5;
 	outline: none;
 	text-decoration: none;
 }
@@ -276,6 +277,16 @@ a.link-tooltip:hover span {
 .main_content_area {
 	float:left;
 	width:700px;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+div.main_content_area>div:nth-child(2) {
+	background: rgba(0,0,0,0.4);
+	padding: 10px 30px;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
 }
 .right_sidebar {
 	float:right;
@@ -286,6 +297,8 @@ a.link-tooltip:hover span {
 	color: gainsboro;
 	padding: 10px 20px;
 	border-radius: 10px;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 	word-break: break-all;
 }
 .main_content_area,
@@ -365,6 +378,9 @@ div.button_box {
 .box ul {
 	list-style:none;
 	margin: 0px;
+}
+tbody {
+	background: rgba(244,244,244,0.5);
 }
 /* ================================== 5.0 - Menu styles ================================ */
 div#main ul.nav.maximenuck {
