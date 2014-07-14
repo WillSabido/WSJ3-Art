@@ -23,7 +23,7 @@ html, body {
 	padding: 0;
 }
 body {
-	font-size: 75%;
+	font-size: 90%;
 	font-family: 'Josefin Sans', 'Oxygen', 'ExistenceLight', Arial, Helvetica, sans-serif;
 }
 /* ================ 1.1 - DEFAULT HTML - HEADING STYLES =================== */
@@ -52,6 +52,12 @@ h1, h2, h3, h4, h5, h6 {
 	color: #3d3d3d;
 	margin: 0.5em 0;
 	font-weight: 300;
+	background:rgba(244,244,244,0.4);
+	-webkit-border-radius: 15px 30px;
+    -moz-border-radius: 15px 30px;
+    border-radius: 15px 30px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    padding: 10px 5px;
 }
 /* =============== 2.0 - DEFAULT HTML - LINK STYLES =============== */
 a {
@@ -266,20 +272,21 @@ a.link-tooltip:hover span {
 	display: block;
 }
 /* ================================== 4.0 - Main styles ================================ */
-.main_container {
-    width:940px;
-    margin-left:auto;
-    margin-right:auto;
-}
 .mid_container {
-    margin:20px 0px;
+    margin:0px 0px;
 }
 .main_content_area {
 	float:left;
-	width:700px;
 	-moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
+}
+ul, body.main_content_area>div, form, p, .main_content_area span {
+	padding: 10px;
+	background: rgba(244,244,244,0.6);
+	-moz-border-radius: 30px 15px;
+    -webkit-border-radius: 30px 15px;
+    border-radius: 30px 15px;
 }
 div.main_content_area>div:nth-child(2) {
 	background: rgba(0,0,0,0.4);
@@ -289,7 +296,7 @@ div.main_content_area>div:nth-child(2) {
     border-radius: 10px;
 }
 .right_sidebar {
-	float:right;
+	float:left;
 	background: rgba(0,0,0,0.4);
 	color: whitesmoke;
 	font-size: small;
@@ -513,6 +520,37 @@ ul.breadcrumb {
 div.itemIsFeatured,
 div.catItemIsFeatured,
 div.userItemIsFeatured {background:url(../images/system/featuredItem.png) no-repeat 100% 0;}
+/* Item Meta */
+div.itemAuthorBlock {
+	background: rgba(0,0,0,0.4);
+	border: none;
+	-moz-border-radius: 20px 10px 20px 10px;
+	-webkit-border-radius: 20px 10px 20px 10px;
+	border-radius: 20px 10px 20px 10px;
+}
+div.itemToolbar {
+	background: rgba(0,0,0,0.4);
+	-moz-border-radius: 20px 10px 20px 10px;
+	-webkit-border-radius: 20px 10px 20px 10px;
+	border-radius: 20px 10px 20px 10px;
+}
+/* Item Comments */
+div.itemComments {
+	background: none;
+	border: none;
+	padding: 0px;
+}
+/* lists */
+.even {
+	background: rgba(0,0,0,0.5);
+	padding: 2px;
+	border-bottom: 1px dotted #ccc;
+}
+.odd {
+	background: rgba(0,0,0,0.3);
+	padding: 2px;
+	border-bottom: 1px dotted #ccc;
+}
 /* ================================== 7.0 - Carousel styles ================================ */
 a.carousel-control.left, a.carousel-control.right {
 	display: none!important;
@@ -521,4 +559,11 @@ a.carousel-control.left, a.carousel-control.right {
 div.abivia-multi-twitter {
 	font-family: 'Josefin Sans', 'Oxygen', 'ExistenceLight', Arial, Helvetica, sans-serif;
 	background: rgba(244,244,244,0.4);
+}
+div.tweettweets {
+	padding-top: 4px;
+}
+div.tweettweets div a img {
+	float: left;
+	padding: 4px;
 }
