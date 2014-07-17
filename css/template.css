@@ -1,10 +1,10 @@
 /**
 * @author    Will Sabido http://webisabi.co.uk
-* @copyright Copyright (C) 2013 WebiSabi.co.uk. All rights reserved.
+* @copyright Copyright (C) Will Sabido 2014 WebiSabi.co.uk. All rights reserved.
 * @license   GPLv2.0
 */
 /* ================= Webi Sabi Joomla! 3 Template Stylesheet ================ */
-/* ============= Created - 22/08/2013 | Modified - 10/07/2014 =============== */
+/* ============= Created - 07/07/2014 | Modified - 15/07/2014 =============== */
 /* ============================== DEFAULT HTML ============================== */
 /* =============== DEFAULT HTML - GENERAL STYLES ============================ */
 /**	____CONTENTS___ 
@@ -15,7 +15,9 @@
 *	4.0 - Main styles
 *	5.0 - Menu styles
 *	6.0 - K2 styles
-*	7.0 - Carousel styles */
+*	7.0 - Carousel styles
+*	8.0 - Plugin styles
+*	9.0 - Bootstrap styles */
 /* ============================= 1.0 - DEFAULT HTML ========================= */
 html, body {
 	line-height: 1.5;
@@ -25,6 +27,7 @@ html, body {
 body {
 	font-size: 90%;
 	font-family: 'Josefin Sans', 'Oxygen', 'ExistenceLight', Arial, Helvetica, sans-serif;
+	list-style: none;
 }
 /* ================ 1.1 - DEFAULT HTML - HEADING STYLES =================== */
 h1 {
@@ -57,7 +60,8 @@ h1, h2, h3, h4, h5, h6 {
     -moz-border-radius: 15px 30px;
     border-radius: 15px 30px;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-    padding: 10px 5px;
+    padding: 10px 25px;
+    margin: 10px;
 }
 /* =============== 2.0 - DEFAULT HTML - LINK STYLES =============== */
 a {
@@ -82,6 +86,37 @@ a:active {
 }
 a img {
 	border: none;
+}
+body a {
+	color: lightblue;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.7);
+}
+body.main_content_area a {
+	color: teal;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.7);
+}
+body a:hover {
+	color: transparent;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.9);
+	text-decoration: none;
+}
+div.itemBody a, div.itemHeader a {
+	color: forestgreen;
+}
+div.main_content_area a {
+	color: aliceblue;
+}
+div.main_content_area a:hover {
+	color: transparent;
+}
+div.itemToolbar a {
+	color: mintcream;
+}
+div.itemToolbar a:hover {
+	color: white;
+}
+.right_sidebar a:hover {
+	color: whitesmoke;
 }
 .button-link {
 	display: block;
@@ -272,21 +307,22 @@ a.link-tooltip:hover span {
 	display: block;
 }
 /* ================================== 4.0 - Main styles ================================ */
-.mid_container {
-    margin:0px 0px;
-}
 .main_content_area {
 	float:left;
 	-moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
-ul, body.main_content_area>div, form, p, .main_content_area span {
+body.main_content_area ul, body.main_content_area ul li, body.main_content_area>div, form, p, .main_content_area span, address {
+	list-style:none;
 	padding: 10px;
 	background: rgba(244,244,244,0.6);
 	-moz-border-radius: 30px 15px;
     -webkit-border-radius: 30px 15px;
     border-radius: 30px 15px;
+}
+span.star {
+	background: none;
 }
 div.main_content_area>div:nth-child(2) {
 	background: rgba(0,0,0,0.4);
@@ -302,17 +338,17 @@ div.main_content_area>div:nth-child(2) {
 	font-size: small;
 	text-overflow: ellipsis;
 	color: gainsboro;
-	padding: 10px 20px;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 	word-break: break-all;
+	border-bottom: 4px dashed black;
 }
 .main_content_area,
 .right_sidebar,
 .footer,
 .header {
-	border:0px solid #bbb;
+	border:none	;
 }
 /* Log in form styling */
 #login-form {
@@ -330,8 +366,20 @@ div.button_box {
 	margin-left:auto;
 	margin-right:auto;
 	padding:20px;
-	width:100%;
-	
+	width:auto;
+	font-size:x-large;
+}
+div.main_content_area .button_box a {
+	color: black;
+	text-shadow: 1px -1px 1px white;
+	border-radius: 10px 20px;
+	padding: 10px 20px;
+	border-bottom: 4px dashed darkslategrey;
+	background: rgba(240,210,200,0.4);
+}
+div.main_content_area .button_box a:hover {
+	background: cadetblue;
+	transition: background 800ms ease;
 }
 .box {
 	margin-top: 10px;
@@ -388,6 +436,15 @@ div.button_box {
 }
 tbody {
 	background: rgba(244,244,244,0.5);
+}
+div.accordion-inner span {
+	padding: 1px 8px 1px 8px;
+}
+div.footer p {
+	font-size: small;
+	border-top: 4px dashed whitesmoke;
+	padding: 1px 30px;
+	text-align: center;
 }
 /* ================================== 5.0 - Menu styles ================================ */
 div#main ul.nav.maximenuck {
@@ -479,6 +536,38 @@ div#main ul.maximenuck li.maximenuck.level1 > span.separator {
 ul.nav.menu {
 	background: none;
 }
+ul.nav.menu li:nth-child(1) a:hover {
+	background: rgba(0,0,0,0.95);
+	transition: background 800ms ease;
+}
+ul.nav.menu li:nth-child(2) a:hover {
+	background: rgba(12,51,231,0.8);
+	transition: background 800ms ease;
+}
+ul.nav.menu li:nth-child(3) a:hover {
+	background: rgba(124,151,31,0.8);
+	transition: background 800ms ease;
+
+}
+ul.nav.menu li:nth-child(4) a:hover {
+	background: rgba(192,51,13,0.8);
+	transition: background 800ms ease;
+
+}
+ul.nav.menu li:nth-child(5) a:hover {
+	background: rgba(120,10,180,0.8);
+	transition: background 800ms ease;
+
+}
+ul.nav.menu li:nth-child(6) a:hover {
+	background: rgba(2,91,31,0.8);
+	transition: background 800ms ease;
+
+}
+ul.nav.menu li:nth-child(7) a:hover {
+	background: rgba(202,151,231,0.8);
+	transition: background 800ms ease;
+}
 ul.nav.menu a {
 	background: rgba(0,0,0,0.6);
 	padding: 10px 30px;
@@ -499,6 +588,7 @@ ul.breadcrumb {
 	position: fixed;
 	top: 0px;
 	right: 0px;
+	border-bottom: 4px dashed lightcoral;
 	-moz-border-radius: 0px 0px 0px 15px;
 	-webkit-border-radius: 0px 0px 0px 15px;
 	border-radius: 0px 0px 0px 15px;
@@ -516,12 +606,40 @@ ul.breadcrumb {
 	background: rgba(0,0,0,0.2);
 }
 /* ================================== 6.0 - K2 Edits ================================ */
+#k2Container {
+	padding: 0px 24px 24px 24px;
+	border-bottom: 4px dashed black;
+}
+span[id^='startOfPageId'] {
+	background: none;
+}
+span.itemImage img, span.catItemImage img, span.userItemImage img {
+	border: none;
+	padding: 0px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+div.itemHeader h2.itemTitle, div.itemFullText h3, div.catItemHeader h3.catItemTitle, div.userItemHeader h3.userItemTitle, div.catItemExtraFields h4, div.genericItemExtraFields h4 {
+	padding: 10px 0 4px 20px;
+	font-family: 'Josefin Sans', 'Oxygen', 'ExistenceLight', Arial, Helvetica, sans-serif;
+}
 /* --- Featured flags --- */
 div.itemIsFeatured,
 div.catItemIsFeatured,
 div.userItemIsFeatured {background:url(../images/system/featuredItem.png) no-repeat 100% 0;}
 /* Item Meta */
-div.itemAuthorBlock {
+div.userItemHeader span.userItemDateCreated {
+	color: #555;
+	font-size: 11px;
+	padding: 6px 20px 4px 20px;
+}
+div.itemRatingBlock span {
+	color: dimgrey;
+	padding: 8px;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.9);
+}
+div.itemAuthorBlock, div.userBlock {
 	background: rgba(0,0,0,0.4);
 	border: none;
 	-moz-border-radius: 20px 10px 20px 10px;
@@ -534,6 +652,70 @@ div.itemToolbar {
 	-webkit-border-radius: 20px 10px 20px 10px;
 	border-radius: 20px 10px 20px 10px;
 }
+div.itemContentFooter{
+	color: #252525;
+}
+div.itemAuthorBlock img.itemAuthorAvatar, div.userBlock img, div.itemListCategory img, div.subCategory a.subCategoryImage img {
+	border-radius: 70px;
+	-moz-border-radius: 70px;
+	-webkit-border-radius: 70px;
+	background: none;
+	border: none;
+}
+div.itemCategory span, div.itemTagsBlock span {
+	font-weight: bold;
+	color: #444;
+	padding: 6px 10px 6px 10px;
+}
+div.itemListCategory {
+	background: none;
+	border: none;
+}
+div.subCategory {
+	background: none;
+	border: none;
+}
+div.catItemTagsBlock span {
+	font-weight: bold;
+	color: #444;
+	padding: 4px 12px;
+}
+div.catItemTagsBlock {
+	padding: 8px;
+	border-bottom: 4px dashed #111;
+}
+div.catItemTagsBlock ul.catItemTags li a {
+	background: olive;
+	border-radius: 4px 12px;
+	padding: 3px 8px;
+/* color: mintcream; */
+}
+div.catItemCommentsLink a {
+	border-radius: 4px 12px;
+	padding: 4px 12px;
+}
+div.catItemCommentsLink a:hover {
+	background: deepskyblue;
+	transition: background 800ms ease;
+}
+div.catItemReadMore a {
+	border-radius: 20px 10px;
+	padding: 4px 12px;
+}
+div.catItemReadMore a:hover {
+	background: antiquewhite;
+	transition: background 800ms ease;
+}
+/* Extra Fields */
+div.catItemExtraFields, div.genericItemExtraFields {
+	border-top: 4px dashed darkslategrey;
+}
+span.itemExtraFieldsLabel, div.catItemExtraFields ul li span.catItemExtraFieldsLabel, div.genericItemExtraFields ul li span.genericItemExtraFieldsLabel {
+	padding: 0px 8px;
+}
+span.catItemExtraFieldsValue {
+	padding: 2px 12px;
+}
 /* Item Comments */
 div.itemComments {
 	background: none;
@@ -544,12 +726,31 @@ div.itemComments {
 .even {
 	background: rgba(0,0,0,0.5);
 	padding: 2px;
-	border-bottom: 1px dotted #ccc;
+	border-bottom: 4px dashed #222;
 }
 .odd {
 	background: rgba(0,0,0,0.3);
 	padding: 2px;
-	border-bottom: 1px dotted #ccc;
+	border-bottom: 4px dashed #333;
+}
+/* foot */
+div.itemBackToTop a {
+	background: rgba(0,0,0,0.6);
+	font-size: 1.2em;
+	padding: 10px;
+	border-radius: 10px 20px;
+	-moz-border-radius: 10px 20px;
+	-webkit-border-radius: 10px 20px;
+	text-decoration: none;
+}
+div.itemBackToTop a:hover {
+	background: rgba(40,80,90,0.9);
+	color: whitesmoke;
+	text-decoration: none;
+	transition: background 800ms ease;
+}
+div.itemHeader span.itemDateCreated {
+	padding-bottom: 4px;
 }
 /* ================================== 7.0 - Carousel styles ================================ */
 a.carousel-control.left, a.carousel-control.right {
@@ -566,4 +767,52 @@ div.tweettweets {
 div.tweettweets div a img {
 	float: left;
 	padding: 4px;
+	border-radius: 10px 30px;
+	-moz-border-radius: 10px 30px;
+	-webkit-border-radius: 10px 30px;
+}
+div.abivia-multi-twittertweets {
+	padding: 14px;
+	border-top: 4px dashed slategray;
+	margin-top: 24px;
+}
+/* gallery plugin */
+div#fuertecontainer {
+	padding: 0px;
+}
+/* facebook */
+div.fb-like.fb_iframe_widget span {
+	background: none;
+	padding: 0px;
+	text-shadow: 0px 1px 0px whitesmoke;
+}
+table#u_0_0, .fb_iframe_widget, .fb_iframe_widget table {
+	text-shadow: 0px 1px 1px whitesmoke, 1px -1px 0px gainsboro;
+	color: aliceblue;
+}
+/* ================================== 9.0 - HikaShop styles ================================ */
+.pane-sliders .panel {
+	border: none;
+	margin-bottom: 3px;
+}
+/* ================================== 9.0 - Bootstrap style overrides ================================ */
+.accordion-group, .page-header, .accordian-inner {
+	border: none !important;
+}
+.accordion-group {
+	margin: 20px;
+}
+div.accordion-inner {
+	background: rgba(69, 85, 99,0.8);
+	border-radius: 10px 20px;
+	padding: 10px 20px;
+	border-top: 4px dashed #e5e5e5;
+}
+div.accordion-heading {
+	background: rgba(88, 132, 130,0.5);
+	border-radius: 20px 10px;
+	border-bottom: 4px dashed salmon;
+}
+textarea {
+	width: 90%;
 }
