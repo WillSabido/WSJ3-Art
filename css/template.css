@@ -4,7 +4,7 @@
 * @license   GPLv2.0
 */
 /* ================= Webi Sabi Joomla! 3 Template Stylesheet ================ */
-/* ============= Created - 07/07/2014 | Modified - 15/07/2014 =============== */
+/* ============= Created - 07/07/2014 | Modified - 28/07/2014 =============== */
 /* ============================== DEFAULT HTML ============================== */
 /* =============== DEFAULT HTML - GENERAL STYLES ============================ */
 /**	____CONTENTS___ 
@@ -47,21 +47,20 @@ h5 {
 	font-weight: bold;
 }
 h6 {
-	font-size: 12px;
+	font-size: 1.2em;
 	font-weight: bold;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', 'Josefin Sans', sans-serif;
-	color: #3d3d3d;
-	margin: 0.5em 0;
-	font-weight: 300;
-	background:rgba(244,244,244,0.4);
+	color: #ccc;
+	background:rgba(24,24,24,0.8);
 	-webkit-border-radius: 15px 30px;
     -moz-border-radius: 15px 30px;
     border-radius: 15px 30px;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
     padding: 10px 25px;
-    margin: 10px;
+    margin: 0px 10px 0px 10px;
+	border-bottom: 4px dashed lightslategrey;
 }
 /* =============== 2.0 - DEFAULT HTML - LINK STYLES =============== */
 a {
@@ -96,6 +95,7 @@ body.main_content_area a {
 	text-shadow: 0px 1px 0px rgba(0,0,0,0.7);
 }
 body a:hover {
+	transition: color 1s;
 	color: transparent;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.9);
 	text-decoration: none;
@@ -108,6 +108,13 @@ div.main_content_area a {
 }
 div.main_content_area a:hover {
 	color: transparent;
+}
+div.main_content_area a.itemRelTitle, div.itemAuthorLatest ul li a {
+	color: aliceblue;
+}
+div.main_content_area a.itemRelTitle:hover, div.itemAuthorLatest ul li a:hover {
+	color: blue;
+	transition: color 600ms ease;
 }
 div.itemToolbar a {
 	color: mintcream;
@@ -343,6 +350,7 @@ div.main_content_area>div:nth-child(2) {
     -webkit-border-radius: 10px;
 	word-break: break-all;
 	border-bottom: 4px dashed black;
+	box-shadow: inset 0px 0px 95px greenyellow, 0px 0px 10px maroon;
 }
 .main_content_area,
 .right_sidebar,
@@ -445,6 +453,17 @@ div.footer p {
 	border-top: 4px dashed whitesmoke;
 	padding: 1px 30px;
 	text-align: center;
+	text-shadow: 0px 1px 2px rgb(59, 92, 92), -1px -1px 2px rgb(241, 240, 240);
+	box-shadow: inset 0px 0px 10px gainsboro, 0px 0px 5px saddlebrown;
+}
+/* list styles */
+.itemBody ul, ol {
+	background: rgba(124,157,210,0.8);
+	border-bottom: 1px dotted aliceblue;
+	border-radius: 5px 10px;
+	margin: 2px 15px;
+	padding: 12px 40px;
+	box-shadow: inset 0 0 10px #000000;
 }
 /* ================================== 5.0 - Menu styles ================================ */
 div#main ul.nav.maximenuck {
@@ -582,29 +601,6 @@ ul.nav.menu a {
 ul.nav.menu a:hover {
 	color: whitesmoke;
 }
-ul.breadcrumb {
-	color:gainsboro;
-	background: rgba(0,0,0,0.4);
-	position: fixed;
-	top: 0px;
-	right: 0px;
-	border-bottom: 4px dashed lightcoral;
-	-moz-border-radius: 0px 0px 0px 15px;
-	-webkit-border-radius: 0px 0px 0px 15px;
-	border-radius: 0px 0px 0px 15px;
-}
-.breadcrumb>li {
-	text-shadow: 0 1px 0 #000;
-}
-.breadcrumb>.active {
-	color:#dfdfdf;
-}
-.pane-sliders .panel h3 {
-	background: rgba(0,0,0,0.4);
-}
-.pane-sliders .content {
-	background: rgba(0,0,0,0.2);
-}
 /* ================================== 6.0 - K2 Edits ================================ */
 #k2Container {
 	padding: 0px 24px 24px 24px;
@@ -620,9 +616,36 @@ span.itemImage img, span.catItemImage img, span.userItemImage img {
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
-div.itemHeader h2.itemTitle, div.itemFullText h3, div.catItemHeader h3.catItemTitle, div.userItemHeader h3.userItemTitle, div.catItemExtraFields h4, div.genericItemExtraFields h4 {
-	padding: 10px 0 4px 20px;
-	font-family: 'Josefin Sans', 'Oxygen', 'ExistenceLight', Arial, Helvetica, sans-serif;
+.itemView h1, .itemView h2, .itemView h3, .itemView h4, .itemView h5, .itemView h6 {
+	padding: 10px 25px;
+	font-family: 'Raleway', 'Josefin Sans', 'Oxygen', 'ExistenceLight', Arial, Helvetica, sans-serif;
+	border-bottom: 4px dashed lightslategrey;	
+}
+div.itemFullText h1,
+div.itemFullText h2,
+div.itemHeader h2.itemTitle, 
+div.itemFullText h3, 
+div.catItemHeader h3.catItemTitle, 
+div.userItemHeader h3.userItemTitle,
+div.itemFullText h4, 
+div.catItemExtraFields h4, 
+div.genericItemExtraFields h4,
+div.itemFullText h5,
+div.itemFullText h6, {
+	padding: 10px 25px;
+	font-family: 'Raleway', 'Josefin Sans', 'Oxygen', 'ExistenceLight', Arial, Helvetica, sans-serif;
+	border-bottom: 4px dashed lightslategrey;	
+}
+/* Drop cap */
+div.main_content_area p:first-child:first-letter { 
+	float: left; 
+	color: #903; 
+	font-size: 2.0em; 
+	line-height: 34px; 
+	padding-top: 2px; 
+	padding-right: 2px; 
+	padding-left: 6px; 
+	font-family: 'Oxygen', Georgia, serif; 
 }
 /* --- Featured flags --- */
 div.itemIsFeatured,
@@ -640,7 +663,7 @@ div.itemRatingBlock span {
 	text-shadow: 0px 1px 0px rgba(0,0,0,0.9);
 }
 div.itemAuthorBlock, div.userBlock {
-	background: rgba(0,0,0,0.4);
+	background: none;
 	border: none;
 	-moz-border-radius: 20px 10px 20px 10px;
 	-webkit-border-radius: 20px 10px 20px 10px;
@@ -661,6 +684,20 @@ div.itemAuthorBlock img.itemAuthorAvatar, div.userBlock img, div.itemListCategor
 	-webkit-border-radius: 70px;
 	background: none;
 	border: none;
+	float: right;
+}
+div.subCategory a.subCategoryImage:hover img {
+    -webkit-box-shadow:inset 0px 0px 0px 10px slategrey;
+    -moz-box-shadow:inset 0px 0px 0px 10px slategrey;
+    box-shadow:inset 0px 0px 0px 10px slategrey;
+    border: none;
+    margin: -4px;
+}
+div.subCategory a.subCategoryImage img, div.subCategory a.subCategoryImage:hover img {
+background: #fff;
+/* padding: 4px; */
+/* border: 1px solid #ddd; */
+margin: 0 8px 0 0;
 }
 div.itemCategory span, div.itemTagsBlock span {
 	font-weight: bold;
@@ -680,7 +717,7 @@ div.catItemTagsBlock span {
 	color: #444;
 	padding: 4px 12px;
 }
-div.catItemTagsBlock {
+div.catItemTagsBlock, div.itemTagsBlock {
 	padding: 8px;
 	border-bottom: 4px dashed #111;
 }
@@ -704,13 +741,41 @@ div.catItemReadMore a {
 }
 div.catItemReadMore a:hover {
 	background: antiquewhite;
-	transition: background 800ms ease;
+	transition: background 1s ease;
+}
+div.itemListSubCategories h3 {
+	display: none;
+}
+div.itemNavigation {
+	padding: 4px 8px;
+	margin: 0 0 24px 0;
+	border-top: 4px dotted #ccc;
+	border-bottom: 4px dotted #ccc;
+	background: #567FA5;
+}
+div.itemNavigation {
+	padding: 4px 8px;
+	margin: 0 0 24px 0;
+	border-top: 4px dotted #ccc;
+	border-bottom: 4px dotted #ccc;
+	background: rgba(29, 91, 148, 0.8);
+	border-radius: 5px 20px;
+}
+div.itemNavigation span.itemNavigationTitle {
+	color: #805151;
+}
+div.itemContentFooter {
+	border-top: none;
 }
 /* Extra Fields */
+div.itemExtraFields {
+	padding: 0px 0 0 0;
+	border-top: 4px dashed lightslategrey;
+}
 div.catItemExtraFields, div.genericItemExtraFields {
 	border-top: 4px dashed darkslategrey;
 }
-span.itemExtraFieldsLabel, div.catItemExtraFields ul li span.catItemExtraFieldsLabel, div.genericItemExtraFields ul li span.genericItemExtraFieldsLabel {
+span.itemExtraFieldsLabel, div.catItemExtraFields ul li span.catItemExtraFieldsLabel, div.genericItemExtraFields ul li span.genericItemExtraFieldsLabel, div.itemExtraFields ul li span.itemExtraFieldsValue {
 	padding: 0px 8px;
 }
 span.catItemExtraFieldsValue {
@@ -723,15 +788,21 @@ div.itemComments {
 	padding: 0px;
 }
 /* lists */
+div.itemAuthorLatest ul li, div.itemRelated ul li {
+	list-style:none;
+	border-radius:5px;
+}
 .even {
 	background: rgba(0,0,0,0.5);
 	padding: 2px;
 	border-bottom: 4px dashed #222;
+	border-radius: 5px 10px;
 }
 .odd {
 	background: rgba(0,0,0,0.3);
 	padding: 2px;
 	border-bottom: 4px dashed #333;
+	border-radius: 10px 5px;
 }
 /* foot */
 div.itemBackToTop a {
@@ -769,12 +840,14 @@ div.tweettweets div a img {
 	padding: 4px;
 	border-radius: 10px 30px;
 	-moz-border-radius: 10px 30px;
-	-webkit-border-radius: 10px 30px;
 }
 div.abivia-multi-twittertweets {
 	padding: 14px;
 	border-top: 4px dashed slategray;
 	margin-top: 24px;
+}
+div.abivia-multi-twittertweets a {
+	text-shadow: 0px 1px 1px black, 0px -1px 1px aliceblue;
 }
 /* gallery plugin */
 div#fuertecontainer {
@@ -786,7 +859,7 @@ div.fb-like.fb_iframe_widget span {
 	padding: 0px;
 	text-shadow: 0px 1px 0px whitesmoke;
 }
-table#u_0_0, .fb_iframe_widget, .fb_iframe_widget table {
+table#u_0_0, .fb_iframe_widget, .fb_iframe_widget table, span#u_0_3, html#facebook body {
 	text-shadow: 0px 1px 1px whitesmoke, 1px -1px 0px gainsboro;
 	color: aliceblue;
 }
@@ -815,4 +888,33 @@ div.accordion-heading {
 }
 textarea {
 	width: 90%;
+}
+div#system-message a {
+	color: black;
+}
+ul.breadcrumb {
+	color:gainsboro;
+	background: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	border-bottom: 4px dashed lightcoral;
+	-moz-border-radius: 0px 0px 0px 15px;
+	-webkit-border-radius: 0px 0px 0px 15px;
+	border-radius: 0px 0px 0px 15px;
+}
+ul.breadcrumb a:hover {
+	color: whitesmoke;
+}
+.breadcrumb>li {
+	text-shadow: 0 1px 0 #000;
+}
+.breadcrumb>.active {
+	color:#dfdfdf;
+}
+.pane-sliders .panel h3 {
+	background: rgba(0,0,0,0.4);
+}
+.pane-sliders .content {
+	background: rgba(0,0,0,0.2);
 }
