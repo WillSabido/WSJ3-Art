@@ -4,7 +4,7 @@
 * @license   GPLv2.0
 */
 /* ================= Webi Sabi Joomla! 3 Template Stylesheet ================ */
-/* ============= Created - 07/07/2014 | Modified - 28/07/2014 =============== */
+/* ============= Created - 07/07/2014 | Modified - 01/10/2014 =============== */
 /* ============================== DEFAULT HTML ============================== */
 /* =============== DEFAULT HTML - GENERAL STYLES ============================ */
 /**	____CONTENTS___ 
@@ -29,6 +29,9 @@ body {
 	font-family: 'Josefin Sans', 'Oxygen', 'ExistenceLight', Arial, Helvetica, sans-serif;
 	list-style: none;
 }
+p:empty {
+	display: none;
+	}
 /* ================ 1.1 - DEFAULT HTML - HEADING STYLES =================== */
 h1 {
 	font-size: 1.8em;
@@ -51,16 +54,25 @@ h6 {
 	font-weight: bold;
 }
 h1, h2, h3, h4, h5, h6 {
+	display: inline-flex;
 	font-family: 'Raleway', 'Josefin Sans', sans-serif !important;
 	color: #ccc;
 	background:rgba(24,24,24,0.8);
 	-webkit-border-radius: 15px 30px;
     -moz-border-radius: 15px 30px;
+    -o-border-radius 15px 30px;
     border-radius: 15px 30px;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
     padding: 10px 25px !important;
     margin: 0px 10px 0px 10px !important;
 	border-bottom: 4px dashed lightslategrey;
+	box-shadow: inset 0px 0px 95px rgba(47, 205, 255, 0.47), 0px 0px 10px black;
+}
+div.subCategory h2 {
+	display: -webkit-box;
+}
+div.right_sidebar h4 {
+	display: block;
 }
 /* =============== 2.0 - DEFAULT HTML - LINK STYLES =============== */
 a {
@@ -96,7 +108,7 @@ body.main_content_area a {
 }
 body a:hover {
 	transition: color 1s;
-	color: transparent;
+	color: rgba(130, 255, 121, 1);
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.9);
 	text-decoration: none;
 }
@@ -107,17 +119,17 @@ div.main_content_area a {
 	color: aliceblue;
 }
 div.main_content_area a:hover {
-	color: transparent;
+	color: chartreuse;
 }
 div.main_content_area a.itemRelTitle, div.itemAuthorLatest ul li a {
 	color: aliceblue;
 }
 div.main_content_area a.itemRelTitle:hover, div.itemAuthorLatest ul li a:hover {
-	color: blue;
+	color: aquamarine;
 	transition: color 600ms ease;
 }
 div.itemToolbar a {
-	color: mintcream;
+	color: antiquewhite;
 }
 div.itemToolbar a:hover {
 	color: white;
@@ -167,7 +179,7 @@ div.itemToolbar a:hover {
 /* -- ADDED FONTS - ExistenceLight, Josefin Sans, Oxygen, Raleway, sans-serif -- */
 @font-face {
 	font-family: ExistenceLight;
-	src: url(./templates/webisabi-art/fonts/Existence-Light/Existence-Light.otf);
+	src: url(/templates/webisabi-art/fonts/existence-light/existence-light.otf);
 }
 /* =============== TYPOGRAPHY - GENERAL TYPOGRAPHY =============== */
 .hd {
@@ -314,19 +326,26 @@ a.link-tooltip:hover span {
 	display: block;
 }
 /* ================================== 4.0 - Main styles ================================ */
+header img {
+	position: relative;
+	top: 5px;
+}
+.thumbnail {
+	border: none;
+}
 .main_content_area {
 	float:left;
     -webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
     border-radius: 10px;
 }
-body.main_content_area ul, body.main_content_area ul li, body.main_content_area>div, form, p, .main_content_area span, address {
+body.main_content_area ul, body.main_content_area ul li, body.main_content_area>div, form, p, .main_content_area>span, address {
 	list-style:none;
 	padding: 10px;
-	background: -webkit-linear-gradient(100deg, rgba(244,244,0,0), rgba(255,255,0,1));
-	background: -o-linear-gradient(350deg, rgba(244,244,0,0), rgba(255,255,0,1));
-	background: -moz-linear-gradient(350deg, rgba(244,244,0,0), rgba(255,255,0,1));
-	background: linear-gradient(350deg, rgba(244,244,0,0), rgba(255,255,0,1));
+	background: -webkit-linear-gradient(100deg, rgba(244, 167, 0, 0.72), rgba(255,255,0,1));
+	background: -o-linear-gradient(350deg, rgba(244, 167, 0, 0.72), rgba(255,255,0,1));
+	background: -moz-linear-gradient(350deg, rgba(244, 167, 0, 0.72), rgba(255,255,0,1));
+	background: linear-gradient(350deg, rgba(244, 167, 0, 0.72), rgba(255,255,0,1));
     -webkit-border-radius: 30px 15px;
 	-moz-border-radius: 30px 15px;
     border-radius: 30px 15px;
@@ -340,8 +359,8 @@ span.star {
 	box-shadow: none;
 }
 div.main_content_area>div:nth-child(2) {
-	background: rgba(0,0,0,0.4);
-	padding: 0px 30px;
+/*	background: rgba(0,0,0,0.4);*/
+/*	padding: 0px 30px;*/
     -webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
     border-radius: 10px;
@@ -356,12 +375,12 @@ div.main_content_area>div:nth-child(2) {
     -webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
-	word-break: break-all;
+	word-break: break-word;
 	border-bottom: 4px dashed black;
-	-webkit-box-shadow: inset 0px 0px 95px greenyellow, 0px 0px 10px maroon;
-	-o-box-shadow: inset 0px 0px 95px greenyellow, 0px 0px 10px maroon;
-	-moz-box-shadow: inset 0px 0px 95px greenyellow, 0px 0px 10px maroon;
-	box-shadow: inset 0px 0px 95px greenyellow, 0px 0px 10px maroon;
+	-webkit-box-shadow: inset 0px 0px 95px rgb(47,205,255), 0px 0px 10px maroon;
+	-o-box-shadow: inset 0px 0px 95px rgb(47,205,255), 0px 0px 10px maroon;
+	-moz-box-shadow: inset 0px 0px 95px rgb(47,205,255), 0px 0px 10px maroon;
+	box-shadow: inset 0px 0px 95px rgb(47,205,255), 0px 0px 10px maroon;
 }
 .main_content_area,
 .right_sidebar,
@@ -401,6 +420,10 @@ div.main_content_area .button_box a {
 }
 div.main_content_area .button_box a:hover {
 	background: cadetblue;
+	transition: background 800ms ease;
+}
+div.main_content_area .button_box a#redbubble:hover {
+	background: rgb(223, 54, 54);
 	transition: background 800ms ease;
 }
 .box {
@@ -475,11 +498,15 @@ div.footer p {
 	-o-box-shadow: inset 0px 0px 10px gainsboro, 0px 0px 5px saddlebrown;
 	-moz-box-shadow: inset 0px 0px 10px gainsboro, 0px 0px 5px saddlebrown;
 	box-shadow: inset 0px 0px 10px gainsboro, 0px 0px 5px saddlebrown;
+	background: -webkit-linear-gradient(100deg, rgba(195, 180, 17, 0.63), rgba(255, 105, 0, 0.63));
+	background: -o-linear-gradient(350deg, rgba(195, 180, 17, 0.63), rgba(255, 105, 0, 0.63));
+	background: -moz-linear-gradient(350deg, rgba(195, 180, 17, 0.63), rgba(255, 105, 0, 0.63));
+	background: linear-gradient(350deg, rgba(195, 180, 17, 0.63), rgba(255, 105, 0, 0.63));
 }
 /* list styles */
 .itemBody ul, ol {
 	background: rgba(124,157,210,0.8);
-	border-bottom: 1px dotted aliceblue;
+	border-bottom: 1px solid aliceblue;
 	border-radius: 5px 10px;
 	margin: 2px 15px;
 	padding: 12px 40px;
@@ -578,37 +605,61 @@ div#main ul.maximenuck li.maximenuck.level1 > span.separator {
 ul.nav.menu {
 	background: none;
 }
+ul.nav.menu li:nth-child(1) a {
+	color: rgba(255,255,255,0.8);
+}
+ul.nav.menu li:nth-child(2) a {
+	color: rgba(71, 181, 255, 1);
+}
+ul.nav.menu li:nth-child(3) a {
+	color: rgba(197, 238, 54, 1);
+}
+ul.nav.menu li:nth-child(4) a {
+	color: rgba(235, 66, 21, 1);
+}
+ul.nav.menu li:nth-child(5) a {
+	color: rgba(223, 97, 255, 1);
+}
+ul.nav.menu li:nth-child(6) a {
+	color: rgba(8, 182, 31, 1);
+}
+ul.nav.menu li:nth-child(7) a {
+	color: rgba(202,151,231,1);
+}
 ul.nav.menu li:nth-child(1) a:hover {
 	background: rgba(0,0,0,0.95);
-	transition: background 800ms ease;
+	color: rgba(255,255,255,1);
+	transition: background 800ms ease, color 600ms linear;
 }
 ul.nav.menu li:nth-child(2) a:hover {
 	background: rgba(12,51,231,0.8);
-	transition: background 800ms ease;
+	color: rgba(255,255,255,1);
+	transition: background 800ms ease, color 600ms linear;
 }
 ul.nav.menu li:nth-child(3) a:hover {
 	background: rgba(124,151,31,0.8);
-	transition: background 800ms ease;
-
+	color: rgba(255,255,255,1);
+	transition: background 800ms ease, color 600ms linear;
 }
 ul.nav.menu li:nth-child(4) a:hover {
 	background: rgba(192,51,13,0.8);
-	transition: background 800ms ease;
-
+	color: rgba(255,255,255,1);
+	transition: background 800ms ease, color 600ms linear;
 }
 ul.nav.menu li:nth-child(5) a:hover {
 	background: rgba(120,10,180,0.8);
-	transition: background 800ms ease;
-
+	color: rgba(255,255,255,1);
+	transition: background 800ms ease, color 600ms linear;
 }
 ul.nav.menu li:nth-child(6) a:hover {
 	background: rgba(2,91,31,0.8);
-	transition: background 800ms ease;
-
+	color: rgba(255,255,255,1);
+	transition: background 800ms ease, color 600ms linear;
 }
 ul.nav.menu li:nth-child(7) a:hover {
 	background: rgba(202,151,231,0.8);
-	transition: background 800ms ease;
+	color: rgba(255,255,255,1);
+	transition: background 800ms ease, color 600ms linear;
 }
 ul.nav.menu a {
 	background: rgba(0,0,0,0.6);
@@ -626,13 +677,17 @@ ul.nav.menu a:hover {
 }
 /* ================================== 6.0 - K2 Edits ================================ */
 #k2Container {
-	padding: 0px 24px 24px 24px;
-	border-bottom: 4px dashed black;
+	padding: 0px 0px 24px 0px;
+	border-bottom: none;
 }
 div#k2Container {
 	margin-bottom: 0px;
 }
+div.itemBody {
+	padding: 0;
+}
 span[id^='startOfPageId'], span#formLog {
+	padding: 0px;
 	background: none;
 	-webkit-box-shadow:none;
 	-moz-box-shadow:none;
@@ -646,10 +701,23 @@ span.itemImage img, span.catItemImage img, span.userItemImage img, span.tagItemI
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
+span.itemTextResizerTitle {
+	background: rgba(200,244,144,0.6);
+	border-radius: 8px;
+	padding: 4px;
+}
+div.itemToolbar ul li a.itemPrintLink span, div.itemToolbar ul li a.itemEmailLink span {
+	background: rgba(100,144,244,0.6);
+	padding: 4px;
+	border-radius: 8px;
+}
 .itemView h1, .itemView h2, .itemView h3, .itemView h4, .itemView h5, .itemView h6 {
 	padding: 10px 25px;
 	font-family: 'Raleway', 'Josefin Sans', 'Oxygen', 'ExistenceLight', Arial, Helvetica, sans-serif;
 	border-bottom: 4px dashed lightslategrey;	
+}
+div.itemAuthorLatest h3, div.itemRelated h3 {
+	padding: 5px 25px !important;
 }
 div.itemFullText h1,
 div.itemFullText h2,
@@ -671,7 +739,7 @@ div.main_content_area p:first-child:first-letter {
 	float: left; 
 	color: #903; 
 	font-size: 2.0em; 
-	line-height: 34px; 
+	line-height: 0.8em; 
 	padding-top: 2px; 
 	padding-right: 2px; 
 	padding-left: 6px; 
@@ -687,6 +755,14 @@ div.userItemHeader span.userItemDateCreated {
 	font-size: 11px;
 	padding: 6px 20px 4px 20px;
 }
+span.itemDateModified, span.itemHitCount {
+	background: rgba(244,244,244,0.3);
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-o-border-radius: 6px;
+	border-radius: 6px;
+	padding: 2px 8px 1px 8px;
+}
 div.itemRatingBlock span {
 	color: dimgrey;
 	padding: 8px;
@@ -700,7 +776,13 @@ div.itemAuthorBlock, div.userBlock {
 	border-radius: 20px 10px 20px 10px;
 }
 div.itemToolbar {
-	background: none;
+	z-index: 20;
+	margin-top: 2px;
+	position: fixed;
+	right: 10px;
+	top: 0px;
+	width: auto;
+	background: rgba(244,244,244,0.8);
 	border: none;
 	-moz-border-radius: 20px 10px 20px 10px;
 	-webkit-border-radius: 20px 10px 20px 10px;
@@ -721,14 +803,32 @@ div.subCategory a.subCategoryImage img {
 	margin: 0 8px 0 0;
 }
 div.subCategory a.subCategoryImage:hover img {
-    -webkit-box-shadow:inset -10px -4px 10px lightcoral;
-    -moz-box-shadow:inset -10px -4px 10px lightcoral;
-    box-shadow:inset -10px -4px 10px lightcoral;
+    -webkit-box-shadow:inset -10px -4px 10px chartreuse;
+    -moz-box-shadow:inset -10px -4px 10px chartreuse;
+    box-shadow:inset -10px -4px 10px chartreuse;
 	background: none;
     border: none;
 	margin: 0 8px 0 0;
 }
-div.itemCategory span, div.itemTagsBlock span {
+a.subCategoryMore {
+	display:none;
+	background: rgba(0,0,0,0.6);
+	margin: 10px;
+	padding: 8px 12px;
+	-moz-border-radius: 15px 5px;
+	-webkit-border-radius: 15px 5px;
+	border-radius: 15px 5px;
+	position: relative;
+	top: 5px;
+}
+div.subCategory h2 {
+	position: initial;
+	min-height: 30px;
+}
+div.subCategory h2 a {
+	position: absolute;
+}
+div.itemCategory span, div.itemTagsBlock span, div.tagItemCategory span {
 	font-weight: bold;
 	color: #444;
 	padding: 6px 10px 6px 10px;
@@ -736,41 +836,60 @@ div.itemCategory span, div.itemTagsBlock span {
 div.itemListCategory {
 	background: none;
 	border: none;
+	margin-top: 0px;
+	padding-top: 0px;
 }
 div.subCategory {
 	background: none;
 	border: none;
 }
-div.catItemTagsBlock span {
+div.catItemTagsBlock span, div.tagItemCategory, div.itemCategory span, div.itemTagsBlock span {
 	font-weight: bold;
 	color: #444;
-	padding: 4px 12px;
-}
-div.catItemTagsBlock, div.itemTagsBlock, div.itemCategory {
-	padding: 8px;
-	border-bottom: 4px dashed #111;
+	padding: 3px 20px;
+	text-shadow: 1px 1px 2px aliceblue;
+	background: rgba(244,244,144,0.6);
+	-webkit-border-radius: 15px 5px;
+	-moz-border-radius: 15px 5px;
+	border-radius: 15px 5px;
 }
 div.catItemTagsBlock ul.catItemTags li a {
+	padding-top: 2px;
+	padding-bottom: 1px;
+}
+div.catItemTagsBlock, div.itemTagsBlock, div.itemCategory, div.tagItemView {
+	padding: 8px;
+	border-bottom: none;
+}
+div.catItemTagsBlock ul.catItemTags li a, div.itemCategory a, div.itemTagsBlock ul.itemTags li a {
 	background: olive;
 	border-radius: 4px 12px;
 	padding: 3px 8px;
 /* color: mintcream; */
 }
+div.catItemTagsBlock ul.catItemTags li a:hover, div.itemCategory a:hover, div.itemTagsBlock ul.itemTags li a:hover {
+	background: darkgreen;
+	transition: background 800ms ease, color 800ms ease;
+}
 div.catItemCommentsLink a {
 	border-radius: 4px 12px;
 	padding: 4px 12px;
+	background: rgba(0,0,0,0.4);
 }
 div.catItemCommentsLink a:hover {
-	background: deepskyblue;
-	transition: background 800ms ease;
+	background: darkblue;
+	color: lightcyan;
+	transition: background 800ms ease, color 800ms ease;
 }
 div.catItemReadMore a {
 	border-radius: 20px 10px;
 	padding: 4px 12px;
+	background: rgba(0,0,0,0.4);
 }
 div.catItemReadMore a:hover {
 	background: antiquewhite;
-	transition: background 1s ease;
+	color: brown;
+	transition: background 800ms ease, color 800ms ease;
 }
 div.itemFullText a {
 	color: rgb(86, 132, 172);
@@ -800,7 +919,7 @@ div.itemNavigation {
 	border-radius: 5px 20px;
 }
 div.itemNavigation span.itemNavigationTitle {
-	color: #805151;
+	color: gold;
 }
 div.itemContentFooter {
 	border-top: none;
@@ -808,7 +927,11 @@ div.itemContentFooter {
 /* Extra Fields */
 div.itemExtraFields {
 	padding: 0px 0 0 0;
-	border-top: 4px dashed lightslategrey;
+	border-top: none;
+	color: aliceblue;
+}
+.catItemExtraFields {
+	color: aliceblue;
 }
 div.catItemExtraFields, div.genericItemExtraFields {
 	border-top: 4px dashed darkslategrey;
@@ -832,12 +955,21 @@ div.itemCommentsForm form textarea.inputbox {
 	width: 90%;
 }
 /* lists */
+div.itemAuthorLatest ul, div.itemRelated ul {
+	display: -webkit-box;
+	padding-left: 4%;
+	padding-right: 2%;
+}
 div.itemAuthorLatest ul li, div.itemRelated ul li {
 	list-style:none;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	-o-border-radius:5px;
 	border-radius:5px;
+	padding-left:20px;
+	padding-right: 20px;
+	border-left: 4px dashed chartreuse;
+	margin-right: 5px;
 }
 .even {
 	background: rgba(0,0,0,0.5);
@@ -877,6 +1009,15 @@ div.itemBackToTop a:hover {
 div.itemHeader span.itemDateCreated {
 	padding-bottom: 4px;
 }
+/* k2 plugins - social etc. */
+div.itemFacebookButton {
+	margin-right: 64px;
+}
+.k2FeedIcon {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
 /* ================================== 7.0 - Carousel styles ================================ */
 a.carousel-control.left, a.carousel-control.right {
 	display: none!important;
@@ -895,6 +1036,17 @@ h4.cw-social-mod-title-ac {
 	background: none;
 }
 /* twitter */
+/* Autotweet NG */
+p.twffollow {
+	background: darkcyan;
+	border: none;
+	box-shadow: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 140px;
+	padding-left: 35px;
+}
+/* Abivia twitter */
 div.abivia-multi-twitter {
 	font-family: 'Josefin Sans', 'Oxygen', 'ExistenceLight', Arial, Helvetica, sans-serif;
 	background: rgba(244,244,244,0.4);
@@ -924,9 +1076,10 @@ div#fuertecontainer {
 }
 /* facebook */
 div.fb-like.fb_iframe_widget span {
-	background: none;
 	padding: 0px;
 	text-shadow: 0px 1px 0px whitesmoke;
+	background: rgba(171, 210, 255, 0.6);
+	border-radius: 10px 20px;
 }
 table#u_0_0, .fb_iframe_widget, .fb_iframe_widget table, span#u_0_3, html#facebook body {
 	text-shadow: 0px 1px 1px whitesmoke, 1px -1px 0px gainsboro;
@@ -940,23 +1093,42 @@ table#u_0_0, .fb_iframe_widget, .fb_iframe_widget table, span#u_0_3, html#facebo
 	border-radius: 10px 20px;
 	background: none;
 }
+table#recaptcha_table {
+	background: none !important;
+	border: none !important;
+}
 span#recaptcha_privacy {
 	background: rgba(20,150,200,0.5);
+}
+/* gmap plugin */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	.locmap {
+		display:none;
+	}	
 }
 /* ================================== 9.0 - HikaShop styles ================================ */
 .pane-sliders .panel {
 	border: none;
 	margin-bottom: 3px;
 }
+h4#category_pane_0 {
+	background: none;
+}
 /* ================================== 9.0 - Bootstrap style overrides ================================ */
 .accordion-group, .page-header, .accordian-inner {
 	border: none !important;
 }
+.page-header {
+	margin: 0px 0px 10px 0px;
+}
 .accordion-group {
-	margin: 20px;
+	margin: 0px;
 }
 div.accordion-inner {
-	color: inherit;
+	color: initial;
 	background: rgba(69, 85, 99,0.8);
 	-webkit-border-radius: 10px 20px;
 	-moz-border-radius: 10px 20px;
@@ -973,6 +1145,20 @@ div.accordion-heading {
 	border-radius: 20px 10px;
 	border-bottom: 4px dashed salmon;
 }
+.accordion-inner dl.contact-address span {
+	color: antiquewhite;
+}
+div#slide-contact div.thumbnail img {
+	border-radius: 200px;
+	border: none;
+	box-shadow: 1px 4px 4px darkcyan;
+}
+div.accordion_inner div.thumbnail.pull-right {
+	border: none;
+}
+div#slide-contact {
+	border: none;
+}
 textarea {
 	width: 90%;
 }
@@ -980,6 +1166,7 @@ div#system-message a {
 	color: black;
 }
 ul.breadcrumb {
+	z-index: 1000;
 	color:gainsboro;
 	background: rgba(0,0,0,0.4);
 	position: fixed;
@@ -1007,6 +1194,9 @@ ul.breadcrumb a:hover {
 	background: rgba(0,0,0,0.2);
 }
 .form-actions {
-	background-color: none;
+	background-color: rgba(255,255,255,0);
 	border-top: none;
+}
+.alert {
+	background: rgba(252, 248, 227, 0.8);
 }
