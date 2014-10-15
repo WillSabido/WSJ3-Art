@@ -1,4 +1,14 @@
 WSJ3-Art
 ========
 
-Bootstrap enabled responsive theme for Joomla 3
+Responsive theme for Joomla!3
+
+Bootstrap
+
+Added Fonts:
+	- Existence Light
+	- Josefin Sans
+	- Raleway
+	- Oxygen
+
+GNU GENERAL PUBLIC LICENSE
